@@ -3,6 +3,7 @@
     width: 100px;
     height: 100px;
     background-color: green;
+    border-radius: 10%;
 }
 
 body {
@@ -10,7 +11,7 @@ body {
 }
 
 button {
-    margin: 50px;
+    margin: 35px 50px;
     padding: 5px 10px;
     border: solid 2px black;
     background-color: pink;
