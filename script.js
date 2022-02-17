@@ -1,5 +1,6 @@
 
 var inter;
+var counter = 0;
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -13,7 +14,19 @@ function randomColor(){
 }
 
 function changeColor(){
+    var changeColorButton = document.getElementById("changeColorButton")
+    changeColorButton.disabled = true
+    counter = 0;
+    inter = setInterval(intervalColor,100);
+}
+
+function intervalColor(){
+    counter++;
     var div = document.getElementById("myDiv")
-    var color = randomColor();
-    div.style.backgroundColor = color;
+    div.style.backgroundColor = randomColor();
+    if (counter === 9) {
+        clearInterval(inter);
+        var changeColorButton = document.getElementById("changeColorButton")
+        changeColorButton.disabled = false
+    }
 }
