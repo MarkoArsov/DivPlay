@@ -9,6 +9,7 @@ body{
 }
 button{
     margin: 50px;
+    padding: 5px 10px;
     border: solid 2px black;
     background-color: pink;
     font-size: 25px;
@@ -16,4 +17,9 @@ button{
 button:hover{
     background-color: black;
     color: pink;
+}
+button:disabled{
+    background-color: pink;
+    color: white;
+    border-color: white;
 }
