@@ -1,7 +1,9 @@
 var inter;
 var counter = 0;
 var isCustom = false;
+
 var prevColor;
+var currColor;
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -17,6 +19,17 @@ function loader() {
     $(customColorInput).hide()
     $(customColorSubmit).hide();
 
+}
+
+function showPrevColor(){
+    var div = document.getElementById("myDiv")
+    currColor = div.style.backgroundColor;
+    div.style.backgroundColor = prevColor;
+}
+
+function showOriginalColor(){
+    var div = document.getElementById("myDiv")
+    div.style.backgroundColor = currColor;
 }
 
 function randomColor() {
