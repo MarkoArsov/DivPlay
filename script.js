@@ -1,5 +1,6 @@
 var inter;
 var counter = 0;
+var isCustom = false;
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -11,8 +12,8 @@ function loader() {
 
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
-
-
+    $(customColorInput).hide()
+    $(customColorSubmit).hide();
 
 }
 
@@ -41,10 +42,23 @@ function intervalColor() {
     }
 }
 
-function customColor(){
-
+function customColor() {
+    var customColorInput = document.getElementById("customColorInput")
+    var customColorSubmit = document.getElementById("customColorSubmit")
+    var customColorButton = document.getElementById("customColorButton")
+    if (!isCustom) {
+        $(customColorInput).show()
+        $(customColorSubmit).show();
+        $(customColorButton).addClass("activeButton")
+        isCustom = true;
+        return
+    }
+    $(customColorInput).hide()
+    $(customColorSubmit).hide()
+    $(customColorButton).removeClass("activeButton")
+    isCustom = false;
 }
 
-function submitCustomColor(){
-
+function submitCustomColor() {
+    var customColorInput = document.getElementById("customColorInput")
 }
