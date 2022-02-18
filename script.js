@@ -8,6 +8,12 @@ function randomInt(min, max) { // min and max included
 function loader() {
     var div = document.getElementById("myDiv")
     div.style.backgroundColor = randomColor();
+
+    var customColorInput = document.getElementById("customColorInput")
+    var customColorSubmit = document.getElementById("customColorSubmit")
+
+
+
 }
 
 function randomColor() {
@@ -33,4 +39,12 @@ function intervalColor() {
         var changeColorButton = document.getElementById("changeColorButton")
         changeColorButton.disabled = false
     }
+}
+
+function customColor(){
+
+}
+
+function submitCustomColor(){
+
 }

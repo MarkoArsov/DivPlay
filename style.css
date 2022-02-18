@@ -31,13 +31,36 @@ button:disabled {
     border-color: white;
 }
 
-button:active{
+button:active {
     background-color: pink;
     color: white;
     border-color: white;
 }
 
-#hoverP{
+.activeButton {
+    background-color: pink;
+    color: white;
+    border-color: white;
+}
+
+.activeButton:hover {
+    background-color: white;
+    color: pink;
+}
+
+#hoverP {
     margin: 10px 10px 10px 50px;
     font-family: Arial, serif;
+}
+
+#customColorInput {
+    margin: 10px 10px 20px 10px;
+    width: 240px;
+    padding: 5px 10px;
+    font-size: 25px;
+    border: solid 2px white;
+}
+
+#customColorSubmit {
+    margin: 10px;
 }

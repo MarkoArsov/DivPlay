@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -16,7 +17,9 @@
     <button id="changeColorButton" onclick="changeColor()">Random Color</button>
 </div>
 <div>
-    <button  onclick="changeColor()">Custom Color</button>
+    <button  onclick="customColor()">Custom Color</button>
+    <input id="customColorInput" type="text" placeholder="Enter Color">
+    <button class="activeButton" id="customColorSubmit" onclick="submitCustomColor()">Submit</button>
 </div>
 
 </body>
