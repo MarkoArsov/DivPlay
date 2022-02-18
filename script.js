@@ -1,6 +1,7 @@
 var inter;
 var counter = 0;
 var isCustom = false;
+var prevColor;
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -9,6 +10,7 @@ function randomInt(min, max) { // min and max included
 function loader() {
     var div = document.getElementById("myDiv")
     div.style.backgroundColor = randomColor();
+    prevColor = div.style.backgroundColor;
 
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
@@ -28,6 +30,7 @@ function changeColor() {
     var changeColorButton = document.getElementById("changeColorButton")
     changeColorButton.disabled = true
     counter = 0;
+    prevColor = document.getElementById("myDiv").style.backgroundColor;
     inter = setInterval(intervalColor, 100);
 }
 
@@ -60,5 +63,11 @@ function customColor() {
 }
 
 function submitCustomColor() {
-    var customColorInput = document.getElementById("customColorInput")
+    var customColor = document.getElementById("customColorInput").value;
+    document.getElementById("customColorInput").value = "";
+    customColor = customColor.toLowerCase().trim();
+    if (customColor === "") return;
+    var div = document.getElementById("myDiv")
+    prevColor = div.style.backgroundColor;
+    div.style.backgroundColor = customColor;
 }
