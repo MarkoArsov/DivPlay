@@ -102,6 +102,20 @@ function exitCustom() {
     $(customColorButton).show()
 }
 
+var customColorInputType = true
 function changeColorType() {
     var customColorInput = document.getElementById("customColorInput")
+    if (customColorInputType) {
+        customColorInput.type = "color"
+        customColorInput.style.width = "240px"
+        customColorInput.style.height = "40px"
+        customColorInput.style.backgroundColor = "white"
+        customColorInputType = false
+        return
+    }
+    customColorInput.type = "input"
+    customColorInput.style.width = "216px"
+    customColorInput.style.height = ""
+    customColorInput.value = ""
+    customColorInputType = true
 }
