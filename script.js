@@ -16,8 +16,10 @@ function loader() {
 
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
+    var xButton = document.getElementById("customX")
     $(customColorInput).hide()
     $(customColorSubmit).hide();
+    $(xButton).hide();
 
 }
 
@@ -62,9 +64,12 @@ function customColor() {
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
     var customColorButton = document.getElementById("customColorButton")
+    var xButton = document.getElementById("customX")
     $(customColorInput).show()
     $(customColorSubmit).show();
+    $(xButton).show()
     $(customColorButton).hide()
+
 }
 
 function submitCustomColor() {
