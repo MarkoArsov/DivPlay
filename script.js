@@ -74,7 +74,7 @@ function submitCustomColor() {
     $(customColorInput).hide()
     $(customColorSubmit).hide()
     $(customColorButton).show()
-    
+
     var customColor = document.getElementById("customColorInput").value;
     document.getElementById("customColorInput").value = "";
     customColor = customColor.toLowerCase().trim();
