@@ -47,7 +47,8 @@ button:active {
     background-color: white;
     color: pink;
 }
-#customX{
+
+.funButton{
     width: 50px;
     margin: 10px;
 }

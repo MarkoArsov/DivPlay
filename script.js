@@ -17,6 +17,9 @@ function loader() {
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
     var xButton = document.getElementById("customX")
+    var changeColorType = document.getElementById("changeColorType")
+
+    $(changeColorType).hide()
     $(customColorInput).hide()
     $(customColorSubmit).hide();
     $(xButton).hide();
@@ -65,11 +68,13 @@ function customColor() {
     var customColorSubmit = document.getElementById("customColorSubmit")
     var customColorButton = document.getElementById("customColorButton")
     var xButton = document.getElementById("customX")
+    var changeColorType = document.getElementById("changeColorType")
+
     $(customColorInput).show()
     $(customColorSubmit).show();
     $(xButton).show()
+    $(changeColorType).show();
     $(customColorButton).hide()
-
 }
 
 function submitCustomColor() {
@@ -87,9 +92,16 @@ function exitCustom() {
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
     var customColorButton = document.getElementById("customColorButton")
+    var changeColorType = document.getElementById("changeColorType")
     var xButton = document.getElementById("customX")
+
     $(customColorInput).hide()
     $(customColorSubmit).hide()
     $(xButton).hide()
+    $(changeColorType).hide();
     $(customColorButton).show()
+}
+
+function changeColorType() {
+    var customColorInput = document.getElementById("customColorInput")
 }
