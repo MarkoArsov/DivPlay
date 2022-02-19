@@ -21,13 +21,13 @@ function loader() {
 
 }
 
-function showPrevColor(){
+function showPrevColor() {
     var div = document.getElementById("myDiv")
     currColor = div.style.backgroundColor;
     div.style.backgroundColor = prevColor;
 }
 
-function showOriginalColor(){
+function showOriginalColor() {
     var div = document.getElementById("myDiv")
     div.style.backgroundColor = currColor;
 }
@@ -62,20 +62,19 @@ function customColor() {
     var customColorInput = document.getElementById("customColorInput")
     var customColorSubmit = document.getElementById("customColorSubmit")
     var customColorButton = document.getElementById("customColorButton")
-    if (!isCustom) {
-        $(customColorInput).show()
-        $(customColorSubmit).show();
-        $(customColorButton).addClass("activeButton")
-        isCustom = true;
-        return
-    }
-    $(customColorInput).hide()
-    $(customColorSubmit).hide()
-    $(customColorButton).removeClass("activeButton")
-    isCustom = false;
+    $(customColorInput).show()
+    $(customColorSubmit).show();
+    $(customColorButton).hide()
 }
 
 function submitCustomColor() {
+    var customColorInput = document.getElementById("customColorInput")
+    var customColorSubmit = document.getElementById("customColorSubmit")
+    var customColorButton = document.getElementById("customColorButton")
+    $(customColorInput).hide()
+    $(customColorSubmit).hide()
+    $(customColorButton).show()
+    
     var customColor = document.getElementById("customColorInput").value;
     document.getElementById("customColorInput").value = "";
     customColor = customColor.toLowerCase().trim();
