@@ -47,7 +47,10 @@ button:active {
     background-color: white;
     color: pink;
 }
-
+#customX{
+    width: 50px;
+    margin: 10px;
+}
 #hoverP {
     margin: 10px 10px 10px 50px;
     font-family: Arial, serif;
