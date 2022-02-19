@@ -73,12 +73,6 @@ function customColor() {
 }
 
 function submitCustomColor() {
-    var customColorInput = document.getElementById("customColorInput")
-    var customColorSubmit = document.getElementById("customColorSubmit")
-    var customColorButton = document.getElementById("customColorButton")
-    $(customColorInput).hide()
-    $(customColorSubmit).hide()
-    $(customColorButton).show()
 
     var customColor = document.getElementById("customColorInput").value;
     document.getElementById("customColorInput").value = "";
@@ -87,4 +81,15 @@ function submitCustomColor() {
     var div = document.getElementById("myDiv")
     prevColor = div.style.backgroundColor;
     div.style.backgroundColor = customColor;
+}
+
+function exitCustom() {
+    var customColorInput = document.getElementById("customColorInput")
+    var customColorSubmit = document.getElementById("customColorSubmit")
+    var customColorButton = document.getElementById("customColorButton")
+    var xButton = document.getElementById("customX")
+    $(customColorInput).hide()
+    $(customColorSubmit).hide()
+    $(xButton).hide()
+    $(customColorButton).show()
 }
