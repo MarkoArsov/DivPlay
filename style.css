@@ -4,6 +4,7 @@
     height: 120px;
     background-color: green;
     border-radius: 10%;
+
 }
 
 body {
@@ -49,7 +50,7 @@ button:active {
 }
 
 .funButton{
-    width: 50px;
+    width: 80px;
     margin: 10px;
 }
 #hoverP {
@@ -68,3 +69,4 @@ button:active {
 #customColorSubmit {
     margin: 10px;
 }
+
