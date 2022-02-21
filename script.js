@@ -31,7 +31,6 @@ function loader() {
     $(customColorInput).hide()
 
 
-
 }
 
 function showPrevColor() {
@@ -66,28 +65,36 @@ function intervalColor() {
     }
 }
 
+var isCustom = false
+
 function customColor() {
-    $(customColorInput).show()
-    $(changeColorTypeButton).show();
-    $(customColorButton).addClass("activeButton")
+    if (!isCustom) {
+        $(customColorInput).show()
+        $(changeColorTypeButton).show();
+        $(customColorButton).addClass("activeButton")
+        isCustom = true;
+        return
+    }
+    $(customColorInput).hide()
+    $(changeColorTypeButton).hide()
+    $(customColorButton).removeClass("activeButton")
+    isCustom = false
+
 }
+
+var customColorInputType = true
 
 function submitCustomColor() {
     var customColor = customColorInput.value
-    customColorInput.value = "";
+    if (customColorInputType) {
+        customColorInput.value = "";
+    }
     customColor = customColor.toLowerCase().trim();
     if (customColor === "") return;
     prevColor = div.style.backgroundColor;
     div.style.backgroundColor = customColor;
 }
 
-function exitCustom() {
-    $(customColorInput).hide()
-    $(changeColorTypeButton).hide();
-    $(customColorButton).show()
-}
-
-var customColorInputType = true
 
 function changeColorType() {
     if (customColorInputType) {
@@ -98,7 +105,7 @@ function changeColorType() {
         customColorInputType = false
         return
     }
-    customColorInput.type = "input"
+    customColorInput.type = "text"
     customColorInput.style.width = "216px"
     customColorInput.style.height = ""
     customColorInput.value = ""
