@@ -2,6 +2,9 @@
 var prevColor
 var currColor
 
+var prevNumber = "";
+var currNumber
+
 var customColorInput
 var changeColorTypeButton
 var customColorButton
@@ -37,10 +40,15 @@ function loader() {
 function showPrevColor() {
     currColor = div.style.backgroundColor;
     div.style.backgroundColor = prevColor;
+
+    currNumber = divPar.innerText
+    divPar.innerText = prevNumber;
+
 }
 
 function showOriginalColor() {
     div.style.backgroundColor = currColor;
+    divPar.innerText = currNumber
 }
 
 //============================================================================================
@@ -131,7 +139,6 @@ function changeColorType() {
 
 var numberInterval
 var numberInterCounter = 0
-var prevNumber = "";
 
 function randomNumber(){
     randomNumberButton.disabled = true;
