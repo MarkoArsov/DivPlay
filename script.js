@@ -8,6 +8,7 @@ var customColorButton
 var div
 var randomColorButton
 var randomNumberButton
+var divPar
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -24,6 +25,7 @@ function loader() {
     customColorButton = document.getElementById("customColorButton")
     randomColorButton = document.getElementById("changeColorButton")
     randomNumberButton = document.getElementById("randomNumberButton")
+    divPar = document.getElementById("divPar")
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
@@ -129,7 +131,20 @@ function changeColorType() {
 
 var numberInterval
 var numberInterCounter = 0
+var prevNumber = "";
 
 function randomNumber(){
+    randomNumberButton.disabled = true;
+    numberInterCounter = 0;
+    prevNumber = divPar.innerText;
+    numberInterval = setInterval(changeNumber,100)
+}
 
+function changeNumber(){
+    divPar.innerText = randomInt(10, 99);
+    numberInterCounter++;
+    if (numberInterCounter === 9){
+        clearInterval(numberInterval)
+        randomNumberButton.disabled = false;
+    }
 }
