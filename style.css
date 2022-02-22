@@ -76,7 +76,7 @@ button:active {
     padding: 0px;
     margin: 0px 10px;
     width: 240px;
-    height: 25px;
+    height: 27px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -86,11 +86,7 @@ button:active {
     border: none;
     border-radius: 15px;
 }
-#inputDiv{
-    display: inline-block;
-    align-items: center;
-    margin-top: 0;
-}
+
 #customColorSubmit {
     margin: 10px;
 }
