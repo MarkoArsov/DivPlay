@@ -84,6 +84,12 @@ function customColor() {
 
 var customColorInputType = true
 
+function isValidColor(customColor) {
+    const s = new Option().style;
+    s.color = customColor;
+    return s.color !== '';
+}
+
 function submitCustomColor() {
     var customColor = customColorInput.value
     if (customColorInputType) {
@@ -91,7 +97,10 @@ function submitCustomColor() {
     }
     customColor = customColor.toLowerCase().trim();
     customColor = customColor.replace(/\s+/g, '');
-    if (customColor === "") return;
+    if (customColor === "" || !isValidColor(customColor)) {
+        alert("Not a valid color")
+        return;
+    }
     prevColor = div.style.backgroundColor;
     div.style.backgroundColor = customColor;
 }
