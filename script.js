@@ -123,15 +123,16 @@ function submitCustomColor() {
 function changeColorType() {
     if (customColorInputType === "text") {
         customColorInput.type = "color"
-        customColorInput.style.width = "240px"
-        customColorInput.style.height = "40px"
-        customColorInput.style.backgroundColor = "white"
+        $(customColorInput).removeClass("customText")
+        $(customColorInput).addClass("customColor")
+
+
         customColorInputType = "color"
         return
     }
     customColorInput.type = "text"
-    customColorInput.style.width = "216px"
-    customColorInput.style.height = ""
+    $(customColorInput).removeClass("customColor")
+    $(customColorInput).addClass("customText")
     customColorInput.value = ""
     customColorInputType = "text"
 }

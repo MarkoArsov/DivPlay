@@ -25,6 +25,7 @@ button {
 button:hover {
     background-color: black;
     color: pink;
+    cursor: pointer;
 }
 
 button:disabled {
@@ -50,16 +51,17 @@ button:active {
     color: pink;
 }
 
-.funButton{
+.funButton {
     width: 80px;
     margin: 10px;
 }
+
 #hoverP {
     margin: 10px 10px 10px 50px;
     font-family: Arial, serif;
 }
 
-#customColorInput {
+.customText {
     margin: 10px;
     padding: 5px 10px;
     border: solid 2px white;
@@ -67,10 +69,33 @@ button:active {
     width: 216px;
 }
 
+.customColor {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0px;
+    margin: 0px 10px;
+    width: 240px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.customColor::-webkit-color-swatch{
+    border: none;
+    border-radius: 15px;
+}
+#inputDiv{
+    display: inline-block;
+    align-items: center;
+    margin-top: 0;
+}
 #customColorSubmit {
     margin: 10px;
 }
-#divPar{
+
+#divPar {
     font-size: 50px;
     padding-top: 30px;
 }
