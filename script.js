@@ -1,19 +1,17 @@
-var inter;
-var counter = 0;
 
-var prevColor;
-var currColor;
-
-function randomInt(min, max) { // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
+var prevColor
+var currColor
 
 var customColorInput
-
 var changeColorTypeButton
 var customColorButton
 var div
 var randomColorButton
+var randomNumberButton
+
+function randomInt(min, max) { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 function loader() {
     div = document.getElementById("myDiv")
@@ -22,16 +20,17 @@ function loader() {
 
     customColorInput = document.getElementById("customColorInput")
 
-
     changeColorTypeButton = document.getElementById("changeColorType")
     customColorButton = document.getElementById("customColorButton")
     randomColorButton = document.getElementById("changeColorButton")
+    randomNumberButton = document.getElementById("randomNumberButton")
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
 
-
 }
+
+//============================================================================================
 
 function showPrevColor() {
     currColor = div.style.backgroundColor;
@@ -42,6 +41,11 @@ function showOriginalColor() {
     div.style.backgroundColor = currColor;
 }
 
+//============================================================================================
+
+var colorInterval;
+var colorInterCounter = 0;
+
 function randomColor() {
     var r = randomInt(0, 255);
     var g = randomInt(0, 255);
@@ -51,21 +55,23 @@ function randomColor() {
 
 function changeColor() {
     randomColorButton.disabled = true
-    counter = 0;
+    colorInterCounter= 0;
     prevColor = document.getElementById("myDiv").style.backgroundColor;
-    inter = setInterval(intervalColor, 100);
+    colorInterval = setInterval(intervalColor, 100);
 }
 
 function intervalColor() {
-    counter++;
+    colorInterCounter++;
     div.style.backgroundColor = randomColor();
-    if (counter === 9) {
-        clearInterval(inter);
+    if (colorInterCounter === 9) {
+        clearInterval(colorInterval);
         randomColorButton.disabled = false
     }
 }
+//============================================================================================
 
 var isCustom = false
+var customColorInputType = "text"
 
 function customColor() {
     if (!isCustom) {
@@ -82,8 +88,6 @@ function customColor() {
 
 }
 
-var customColorInputType = true
-
 function isValidColor(customColor) {
     const s = new Option().style;
     s.color = customColor;
@@ -92,7 +96,7 @@ function isValidColor(customColor) {
 
 function submitCustomColor() {
     var customColor = customColorInput.value
-    if (customColorInputType) {
+    if (customColorInputType === "text") {
         customColorInput.value = "";
     }
     customColor = customColor.toLowerCase().trim();
@@ -107,17 +111,25 @@ function submitCustomColor() {
 
 
 function changeColorType() {
-    if (customColorInputType) {
+    if (customColorInputType === "text") {
         customColorInput.type = "color"
         customColorInput.style.width = "240px"
         customColorInput.style.height = "40px"
         customColorInput.style.backgroundColor = "white"
-        customColorInputType = false
+        customColorInputType = "color"
         return
     }
     customColorInput.type = "text"
     customColorInput.style.width = "216px"
     customColorInput.style.height = ""
     customColorInput.value = ""
-    customColorInputType = true
+    customColorInputType = "text"
+}
+//============================================================================================
+
+var numberInterval
+var numberInterCounter = 0
+
+function randomNumber(){
+
 }
