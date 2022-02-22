@@ -90,6 +90,7 @@ function submitCustomColor() {
         customColorInput.value = "";
     }
     customColor = customColor.toLowerCase().trim();
+    customColor = customColor.replace(/\s+/g, '');
     if (customColor === "") return;
     prevColor = div.style.backgroundColor;
     div.style.backgroundColor = customColor;
