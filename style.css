@@ -11,14 +11,14 @@
 }
 
 .header{
-    background-color: #AA336A;
+    background-color: #A07855FF;
     padding: 1px;
     text-align: center;
-    color: pink;
+    color: #D4B996FF;
     font-size: 15px;
 }
 body {
-    background-color: pink;
+    background-color: #D4B996FF;
     margin: 0px;
 }
 #buttons{
@@ -28,38 +28,38 @@ button {
     margin: 10px 10px 10px 50px;
     padding: 5px 10px;
     border: solid 2px black;
-    background-color: pink;
+    background-color: #D4B996FF;
     font-size: 25px;
     width: 240px;
 }
 
 button:hover {
     background-color: black;
-    color: pink;
+    color: #D4B996FF;
     cursor: pointer;
 }
 
 button:disabled {
-    background-color: pink;
+    background-color: #D4B996FF;
     color: white;
     border-color: white;
 }
 
 button:active {
-    background-color: pink;
+    background-color: #D4B996FF;
     color: white;
     border-color: white;
 }
 
 .activeButton {
-    background-color: pink;
+    background-color: #D4B996FF;
     color: white;
     border-color: white;
 }
 
 .activeButton:hover {
     background-color: white;
-    color: pink;
+    color: #D4B996FF;
 }
 
 .funButton {
