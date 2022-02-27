@@ -12,6 +12,7 @@ var randomColorButton
 var randomNumberButton
 var divPar
 var moveLeftButton
+var moveDownButton
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -30,6 +31,7 @@ function loader() {
     randomNumberButton = document.getElementById("randomNumberButton")
     divPar = document.getElementById("divPar")
     moveLeftButton = document.getElementById("moveLeft")
+    moveDownButton = document.getElementById("moveDown")
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
@@ -165,6 +167,7 @@ var isLeft = false
 
 
 function moveLeft() {
+    disableMoveButtons()
     if (isLeft) {
         $(div).animate({left: "+=265px"}, 1000)
         isLeft = false
@@ -175,6 +178,14 @@ function moveLeft() {
     isLeft = true
     moveLeftButton.innerText = "Move Right"
 }
-function disableMoveButtons(){
 
+function disableMoveButtons(){
+    moveDownButton.disabled = true
+    moveLeftButton.disabled = true
+    setTimeout(enableMoveButtons,1000)
+}
+
+function enableMoveButtons(){
+    moveDownButton.disabled = false
+    moveLeftButton.disabled = false
 }
