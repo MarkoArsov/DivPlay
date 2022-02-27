@@ -1,4 +1,3 @@
-
 var prevColor
 var currColor
 
@@ -65,7 +64,7 @@ function randomColor() {
 
 function changeColor() {
     randomColorButton.disabled = true
-    colorInterCounter= 0;
+    colorInterCounter = 0;
     prevColor = document.getElementById("myDiv").style.backgroundColor;
     colorInterval = setInterval(intervalColor, 100);
 }
@@ -78,6 +77,7 @@ function intervalColor() {
         randomColorButton.disabled = false
     }
 }
+
 //============================================================================================
 
 var isCustom = false
@@ -136,23 +136,38 @@ function changeColorType() {
     customColorInput.value = ""
     customColorInputType = "text"
 }
+
 //============================================================================================
 
 var numberInterval
 var numberInterCounter = 0
 
-function randomNumber(){
+function randomNumber() {
     randomNumberButton.disabled = true;
     numberInterCounter = 0;
     prevNumber = divPar.innerText;
-    numberInterval = setInterval(changeNumber,100)
+    numberInterval = setInterval(changeNumber, 100)
 }
 
-function changeNumber(){
+function changeNumber() {
     divPar.innerText = randomInt(0, 999);
     numberInterCounter++;
-    if (numberInterCounter === 9){
+    if (numberInterCounter === 9) {
         clearInterval(numberInterval)
         randomNumberButton.disabled = false;
     }
+}
+
+//============================================================================================
+var isLeft = false
+var moveLeftButton = document.getElementById("move")
+
+function moveLeft() {
+    if (isLeft) {
+        $(div).animate({left: "+=265px"}, 1000)
+        isLeft = false
+        return
+    }
+    $(div).animate({left: "-=265px"}, 1000)
+    isLeft = true
 }
