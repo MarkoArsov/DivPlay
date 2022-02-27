@@ -179,6 +179,20 @@ function moveLeft() {
     moveLeftButton.innerText = "Move Right"
 }
 
+var isDown = false
+function moveDown() {
+    disableMoveButtons()
+    if (isDown) {
+        $(div).animate({top: "-=265px"}, 1000)
+        isDown = false
+        moveDownButton.innerText = "Move Down"
+        return
+    }
+    $(div).animate({top: "+=265px"}, 1000)
+    isDown = true
+    moveDownButton.innerText = "Move Up"
+}
+
 function disableMoveButtons(){
     moveDownButton.disabled = true
     moveLeftButton.disabled = true
