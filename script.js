@@ -149,7 +149,7 @@ function randomNumber(){
 }
 
 function changeNumber(){
-    divPar.innerText = randomInt(0, 9999);
+    divPar.innerText = randomInt(0, 999);
     numberInterCounter++;
     if (numberInterCounter === 9){
         clearInterval(numberInterval)
