@@ -13,6 +13,7 @@ var randomNumberButton
 var divPar
 var moveLeftButton
 var moveDownButton
+var rotateButton
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -32,6 +33,7 @@ function loader() {
     divPar = document.getElementById("divPar")
     moveLeftButton = document.getElementById("moveLeft")
     moveDownButton = document.getElementById("moveDown")
+    rotateButton = document.getElementById("rotateButton")
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
@@ -216,13 +218,14 @@ function rotate(){
     degree++;
 }
 
-function startRotate(){
+function rotateDiv(){
     if (!isRotating){
         timer = setInterval(rotate,5)
+        rotateButton.innerText = "Stop Rotating"
+        return
     }
-}
-
-function stopRotate(){
     clearInterval(timer)
+    rotateButton.innerText = "Start Rotating"
     isRotating = false
 }
+
