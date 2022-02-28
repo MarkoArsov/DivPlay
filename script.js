@@ -203,3 +203,26 @@ function enableMoveButtons(){
     moveDownButton.disabled = false
     moveLeftButton.disabled = false
 }
+
+//============================================================================================
+
+var isRotating = false
+var degree = 0
+var timer
+
+function rotate(){
+    isRotating = true
+    $(div).css({transform: 'rotate(' + degree + 'deg)'});
+    degree++;
+}
+
+function startRotate(){
+    if (!isRotating){
+        timer = setInterval(rotate,5)
+    }
+}
+
+function stopRotate(){
+    clearInterval(timer)
+    isRotating = false
+}
