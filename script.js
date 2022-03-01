@@ -171,12 +171,12 @@ var isLeft = false
 function moveLeft() {
     disableMoveButtons()
     if (isLeft) {
-        $(div).animate({left: "+=18%"}, 1000)
+        $(div).animate({left: "+=19%"}, 1000)
         isLeft = false
         moveLeftButton.innerText = "Move Left"
         return
     }
-    $(div).animate({left: "-=18%"}, 1000)
+    $(div).animate({left: "-=19%"}, 1000)
     isLeft = true
     moveLeftButton.innerText = "Move Right"
 }
@@ -185,12 +185,12 @@ var isDown = false
 function moveDown() {
     disableMoveButtons()
     if (isDown) {
-        $(div).animate({top: "-=22%"}, 1000)
+        $(div).animate({top: "-=28%"}, 1000)
         isDown = false
         moveDownButton.innerText = "Move Down"
         return
     }
-    $(div).animate({top: "+=22%"}, 1000)
+    $(div).animate({top: "+=28%"}, 1000)
     isDown = true
     moveDownButton.innerText = "Move Up"
 }
