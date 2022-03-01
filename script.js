@@ -14,6 +14,7 @@ var divPar
 var moveLeftButton
 var moveDownButton
 var rotateButton
+var resetButton
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -34,6 +35,7 @@ function loader() {
     moveLeftButton = document.getElementById("moveLeft")
     moveDownButton = document.getElementById("moveDown")
     rotateButton = document.getElementById("rotateButton")
+    resetButton = document.getElementById("resetButton")
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
@@ -127,12 +129,11 @@ function submitCustomColor() {
 
 
 function changeColorType() {
+
     if (customColorInputType === "text") {
         customColorInput.type = "color"
         $(customColorInput).removeClass("customText")
         $(customColorInput).addClass("customColor")
-
-
         customColorInputType = "color"
         return
     }
@@ -149,6 +150,7 @@ var numberInterval
 var numberInterCounter = 0
 
 function randomNumber() {
+    resetEnable()
     randomNumberButton.disabled = true;
     numberInterCounter = 0;
     prevNumber = divPar.innerText;
@@ -169,6 +171,7 @@ var isLeft = false
 
 
 function moveLeft() {
+    resetEnable()
     disableMoveButtons()
     if (isLeft) {
         $(div).animate({left: "+=19%"}, 1000)
@@ -183,6 +186,7 @@ function moveLeft() {
 
 var isDown = false
 function moveDown() {
+    resetEnable()
     disableMoveButtons()
     if (isDown) {
         $(div).animate({top: "-=28%"}, 1000)
@@ -219,13 +223,25 @@ function rotate(){
 }
 
 function rotateDiv(){
+    resetEnable()
     if (!isRotating){
         timer = setInterval(rotate,5)
+        $(rotateButton).addClass("activeButton")
         rotateButton.innerText = "Stop Rotating"
         return
     }
     clearInterval(timer)
+    $(rotateButton).removeClass("activeButton")
     rotateButton.innerText = "Start Rotating"
     isRotating = false
 }
 
+//============================================================================================
+
+function resetEnable(){
+    $(resetButton).addClass("activeButton")
+}
+
+function reset(){
+    location.reload()
+}
