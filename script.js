@@ -252,5 +252,9 @@ function reset(){
 //============================================================================================
 
 function titleColorEnable(){
- title.style.backgroundColor = div.style.backgroundColor
+ title.style.color = div.style.backgroundColor
+}
+
+function titleColorDisable(){
+    title.style.color = "#D4B996FF"
 }
