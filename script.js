@@ -1,9 +1,7 @@
 var prevColor
 var currColor
-
 var prevNumber = "";
 var currNumber
-
 var customColorInput
 var changeColorTypeButton
 var customColorButton
@@ -23,11 +21,7 @@ function randomInt(min, max) { // min and max included
 
 function loader() {
     div = document.getElementById("myDiv")
-    div.style.backgroundColor = randomColor();
-    prevColor = div.style.backgroundColor;
-
     customColorInput = document.getElementById("customColorInput")
-
     changeColorTypeButton = document.getElementById("changeColorType")
     customColorButton = document.getElementById("customColorButton")
     randomColorButton = document.getElementById("changeColorButton")
@@ -39,10 +33,10 @@ function loader() {
     resetButton = document.getElementById("resetButton")
     title = document.getElementById("title")
 
-
+    div.style.backgroundColor = randomColor();
+    prevColor = div.style.backgroundColor;
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
-
 }
 
 //============================================================================================
@@ -132,7 +126,6 @@ function submitCustomColor() {
 
 
 function changeColorType() {
-
     if (customColorInputType === "text") {
         customColorInput.type = "color"
         $(customColorInput).removeClass("customText")
@@ -170,8 +163,8 @@ function changeNumber() {
 }
 
 //============================================================================================
-var isLeft = false
 
+var isLeft = false
 
 function moveLeft() {
     resetEnable()
@@ -188,6 +181,7 @@ function moveLeft() {
 }
 
 var isDown = false
+
 function moveDown() {
     resetEnable()
     disableMoveButtons()
@@ -258,3 +252,5 @@ function titleColorEnable(){
 function titleColorDisable(){
     title.style.color = "#D4B996FF"
 }
+
+//============================================================================================
