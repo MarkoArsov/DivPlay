@@ -2,18 +2,22 @@ var prevColor
 var currColor
 var prevNumber = "";
 var currNumber
-var customColorInput
-var changeColorTypeButton
-var customColorButton
+
+var title
 var div
-var randomColorButton
-var randomNumberButton
 var divPar
+
+var randomColorButton
+var customColorButton
+    var customColorInput
+    var changeColorTypeButton
+var randomNumberButton
 var moveLeftButton
 var moveDownButton
 var rotateButton
+
 var resetButton
-var title
+
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
