@@ -15,6 +15,7 @@ var moveLeftButton
 var moveDownButton
 var rotateButton
 var resetButton
+var title
 
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -36,6 +37,8 @@ function loader() {
     moveDownButton = document.getElementById("moveDown")
     rotateButton = document.getElementById("rotateButton")
     resetButton = document.getElementById("resetButton")
+    title = document.getElementById("title")
+
 
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
@@ -244,4 +247,10 @@ function resetEnable(){
 
 function reset(){
     location.reload()
+}
+
+//============================================================================================
+
+function titleColorEnable(){
+ title.style.backgroundColor = div.style.backgroundColor
 }
