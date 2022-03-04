@@ -280,5 +280,6 @@ function enableBorderRadius(){
 function updateBorderRadius() {
     var per = borderRadiusSlider.value
     div.style.borderRadius = "" + per + "%"
+    resetEnable()
 }
 //============================================================================================
