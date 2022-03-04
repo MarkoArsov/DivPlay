@@ -24,19 +24,21 @@ function randomInt(min, max) { // min and max included
 }
 
 function loader() {
+    title = document.getElementById("title")
     div = document.getElementById("myDiv")
-    customColorInput = document.getElementById("customColorInput")
-    changeColorTypeButton = document.getElementById("changeColorType")
-    customColorButton = document.getElementById("customColorButton")
-    randomColorButton = document.getElementById("changeColorButton")
-    randomNumberButton = document.getElementById("randomNumberButton")
     divPar = document.getElementById("divPar")
+
+    randomColorButton = document.getElementById("changeColorButton")
+    customColorButton = document.getElementById("customColorButton")
+        customColorInput = document.getElementById("customColorInput")
+        changeColorTypeButton = document.getElementById("changeColorType")
+    randomNumberButton = document.getElementById("randomNumberButton")
     moveLeftButton = document.getElementById("moveLeft")
     moveDownButton = document.getElementById("moveDown")
     rotateButton = document.getElementById("rotateButton")
-    resetButton = document.getElementById("resetButton")
-    title = document.getElementById("title")
 
+    resetButton = document.getElementById("resetButton")
+    
     div.style.backgroundColor = randomColor();
     prevColor = div.style.backgroundColor;
     $(changeColorTypeButton).hide()
