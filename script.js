@@ -15,7 +15,8 @@ var randomNumberButton
 var moveLeftButton
 var moveDownButton
 var rotateButton
-
+var borderRadiusButton
+    var borderRadiusSlider
 var resetButton
 
 
@@ -36,9 +37,10 @@ function loader() {
     moveLeftButton = document.getElementById("moveLeft")
     moveDownButton = document.getElementById("moveDown")
     rotateButton = document.getElementById("rotateButton")
-
+    borderRadiusButton = document.getElementById("borderRadius")
+        borderRadiusSlider = document.getElementById("borderRadiusSlider")
     resetButton = document.getElementById("resetButton")
-    
+
     div.style.backgroundColor = randomColor();
     prevColor = div.style.backgroundColor;
     $(changeColorTypeButton).hide()
@@ -260,3 +262,7 @@ function titleColorDisable(){
 }
 
 //============================================================================================
+
+function enableBorderRadius(){
+
+}
