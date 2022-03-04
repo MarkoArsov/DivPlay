@@ -36,8 +36,8 @@
         <button id="rotateButton" onclick="rotateDiv()">Start Rotating</button>
     </div>
     <div>
-        <button id="borderRadius">Border Radius</button>
-        <input type="range" id="borderRadiusSlider">
+        <button id="borderRadius" onclick="enableBorderRadius()">Border Radius</button>
+        <input type="range" class="customText" onchange="updateBorderRadius()" id="borderRadiusSlider">
     </div>
     <div>
         <button id="resetButton" onclick="reset()">Reset</button>

@@ -45,6 +45,7 @@ function loader() {
     prevColor = div.style.backgroundColor;
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
+    $(borderRadiusSlider).hide()
 }
 
 //============================================================================================
@@ -108,7 +109,6 @@ function customColor() {
     $(changeColorTypeButton).hide()
     $(customColorButton).removeClass("activeButton")
     isCustom = false
-
 }
 
 function isValidColor(customColor) {
@@ -263,6 +263,18 @@ function titleColorDisable(){
 
 //============================================================================================
 
+var isEnabled = false
 function enableBorderRadius(){
+    if (!isEnabled){
+        $(borderRadiusButton).addClass("activeButton")
+        $(borderRadiusSlider).show()
+        isEnabled = true
+        return
+    }
+    $(borderRadiusButton).removeClass("activeButton")
+    $(borderRadiusSlider).hide()
+    isEnabled = false
 
 }
+
+//============================================================================================
