@@ -122,4 +122,7 @@ button:active {
 #freePlayButton:hover {
 
 }
-
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    background: transparent; /* Otherwise white in Chrome */
+}
