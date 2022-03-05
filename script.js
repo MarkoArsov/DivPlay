@@ -46,6 +46,9 @@ function loader() {
     $(changeColorTypeButton).hide()
     $(customColorInput).hide()
     $(borderRadiusSlider).hide()
+
+    changeColorType()
+    changeColorType()
 }
 
 //============================================================================================
@@ -95,7 +98,7 @@ function intervalColor() {
 //============================================================================================
 
 var isCustom = false
-var customColorInputType = "text"
+var customColorInputType = "color"
 
 function customColor() {
     if (!isCustom) {
