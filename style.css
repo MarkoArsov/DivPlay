@@ -122,7 +122,27 @@ button:active {
 #freePlayButton:hover {
 
 }
-input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    background: transparent; /* Otherwise white in Chrome */
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    height: 7px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: white;
+    border-radius: 15px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: 0px; /* Centers thumb on the track */
+    background-color: #A07855FF;
+    height: 24px;
+    width: 12px;
+    border-radius: 15px;
 }
