@@ -9,7 +9,9 @@
     right: 0;
     top: 0;
 }
-
+a{
+    text-underline: none;
+}
 .header {
     background-color: #A07855FF;
     padding: 1px;
