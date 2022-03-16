@@ -6,17 +6,17 @@ var currNumber
 var title
 var div
 var divPar
-
+var freePlayButton
 var randomColorButton
 var customColorButton
-    var customColorInput
-    var changeColorTypeButton
+var customColorInput
+var changeColorTypeButton
 var randomNumberButton
 var moveLeftButton
 var moveDownButton
 var rotateButton
 var borderRadiusButton
-    var borderRadiusSlider
+var borderRadiusSlider
 var resetButton
 
 
@@ -28,17 +28,17 @@ function loader() {
     title = document.getElementById("title")
     div = document.getElementById("myDiv")
     divPar = document.getElementById("divPar")
-
+    freePlayButton = document.getElementById("freePlayButton")
     randomColorButton = document.getElementById("changeColorButton")
     customColorButton = document.getElementById("customColorButton")
-        customColorInput = document.getElementById("customColorInput")
-        changeColorTypeButton = document.getElementById("changeColorType")
+    customColorInput = document.getElementById("customColorInput")
+    changeColorTypeButton = document.getElementById("changeColorType")
     randomNumberButton = document.getElementById("randomNumberButton")
     moveLeftButton = document.getElementById("moveLeft")
     moveDownButton = document.getElementById("moveDown")
     rotateButton = document.getElementById("rotateButton")
     borderRadiusButton = document.getElementById("borderRadius")
-        borderRadiusSlider = document.getElementById("borderRadiusSlider")
+    borderRadiusSlider = document.getElementById("borderRadiusSlider")
     resetButton = document.getElementById("resetButton")
 
     div.style.backgroundColor = randomColor();
@@ -207,13 +207,13 @@ function moveDown() {
     moveDownButton.innerText = "Move Up"
 }
 
-function disableMoveButtons(){
+function disableMoveButtons() {
     moveDownButton.disabled = true
     moveLeftButton.disabled = true
-    setTimeout(enableMoveButtons,1000)
+    setTimeout(enableMoveButtons, 1000)
 }
 
-function enableMoveButtons(){
+function enableMoveButtons() {
     moveDownButton.disabled = false
     moveLeftButton.disabled = false
 }
@@ -224,16 +224,16 @@ var isRotating = false
 var degree = 0
 var timer
 
-function rotate(){
+function rotate() {
     isRotating = true
     $(div).css({transform: 'rotate(' + degree + 'deg)'});
     degree++;
 }
 
-function rotateDiv(){
+function rotateDiv() {
     resetEnable()
-    if (!isRotating){
-        timer = setInterval(rotate,5)
+    if (!isRotating) {
+        timer = setInterval(rotate, 5)
         $(rotateButton).addClass("activeButton")
         rotateButton.innerText = "Stop Rotating"
         return
@@ -246,29 +246,30 @@ function rotateDiv(){
 
 //============================================================================================
 
-function resetEnable(){
+function resetEnable() {
     $(resetButton).addClass("activeButton")
 }
 
-function reset(){
+function reset() {
     location.reload()
 }
 
 //============================================================================================
 
-function titleColorEnable(){
- title.style.color = div.style.backgroundColor
+function titleColorEnable() {
+    title.style.color = div.style.backgroundColor
 }
 
-function titleColorDisable(){
+function titleColorDisable() {
     title.style.color = "#D4B996FF"
 }
 
 //============================================================================================
 
 var isEnabled = false
-function enableBorderRadius(){
-    if (!isEnabled){
+
+function enableBorderRadius() {
+    if (!isEnabled) {
         $(borderRadiusButton).addClass("activeButton")
         $(borderRadiusSlider).show()
         isEnabled = true
@@ -285,4 +286,19 @@ function updateBorderRadius() {
     div.style.borderRadius = "" + per + "%"
     resetEnable()
 }
+
+//============================================================================================
+
+function freePlayButtonHover() {
+    freePlayButton.style.backgroundColor = div.backgroundColor;
+    freePlayButton.style.borderColor = div.backgroundColor;
+    freePlayButton.style.color = "white";
+}
+
+function freePlatButtonBack() {
+    freePlayButton.style.backgroundColor = "#A07855FF";
+    freePlayButton.style.borderColor = "#A07855FF";
+    freePlayButton.style.color = "#D4B996FF";
+}
+
 //============================================================================================
