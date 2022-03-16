@@ -290,9 +290,9 @@ function updateBorderRadius() {
 //============================================================================================
 
 function freePlayButtonHover() {
-    freePlayButton.style.backgroundColor = div.backgroundColor;
-    freePlayButton.style.borderColor = div.backgroundColor;
-    freePlayButton.style.color = "white";
+    freePlayButton.style.backgroundColor = "black";
+    freePlayButton.style.borderColor = "black";
+
 }
 
 function freePlatButtonBack() {
