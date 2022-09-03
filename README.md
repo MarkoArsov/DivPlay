@@ -1,2 +1,2 @@
 # Div Play
-[Static website](https://marrsso.github.io/DivPlay/)
+[Static website](https://markoarsov.github.io/DivPlay/)
